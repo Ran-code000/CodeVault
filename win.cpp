@@ -1,6 +1,10 @@
+//实现单链表的插入，删除，反转，求长，判空，寻数，拷贝，清空，打印（增加了重载 << 操作符来实现），升序合并两条有序（升/降）链表， 重载了 + 操作符提供接口（由派生类实现）
+//实现了两个派生链表（UpLinklist and DownLinklist）增加功能按升/降序插入链表，重载了加法符号实现链表的合并
+//定义基类链表中增加了自定义迭代器（重载了* and ++(前置和后置) and == and != 操作符），从而在定义的基类链表中可以实现 begin() and end()迭代器
 #include <iostream>
 #include <iomanip>
 using namespace std;
+//基类定义
 struct Listnode{
     int val;
     Listnode* next;
@@ -14,6 +18,7 @@ public:
     LinkList(Listnode* p = nullptr, bool t = false) : head(p), type(t){}
     ~LinkList();
     LinkList(const LinkList& other);
+    //Linklist(const Linklist& other) : head(other.head){} 错误写法
     LinkList& operator= (const LinkList& other);
     void InsertToUpOrDown(int val);
     void InsertAtHead(int val);
@@ -59,6 +64,7 @@ public:
     iterator begin(){ return iterator(head);}
     iterator end(){ return iterator(nullptr);}
 };
+//派生类定义
 class UpLinkList : virtual public LinkList{
 public:
     UpLinkList() : LinkList(nullptr, true){}
@@ -77,6 +83,7 @@ public:
     LinkList*  operator+ (LinkList& other);
     void display();
 };
+//基类功能实现
 LinkList::LinkList(const LinkList& other) : head(nullptr) {
     type = other.type;
     for(Listnode* curr = other.head; curr != nullptr; curr = curr->next) InsertAtHead(curr->val);
@@ -240,6 +247,7 @@ void LinkList::reverseAtRange(int beg, int end){
     }
 }
 void LinkList::clear(){ while(head) removeAtEnd();}
+//派生类功能实现
 void DownLinkList::InsertToUpOrDown(int val){
     Listnode* newnode = new Listnode(val);
     if(IsEmpty()) head = newnode;
@@ -255,9 +263,6 @@ void DownLinkList::InsertToUpOrDown(int val){
 void DownLinkList::display(){
     LinkList::display();
 }
-void UpLinkList::display(){
-    LinkList::display();
-}
 void UpLinkList::InsertToUpOrDown(int val){
     Listnode* newnode = new Listnode(val);
     if(IsEmpty()) head = newnode;
@@ -269,6 +274,9 @@ void UpLinkList::InsertToUpOrDown(int val){
         if(prev) prev->next = newnode;
         else newnode->next = head, head = newnode;
     }
+}
+void UpLinkList::display(){
+    LinkList::display();
 }
 LinkList* mergeLinkList(LinkList& a, LinkList& b){
     int fa = 0, fb = 0;
