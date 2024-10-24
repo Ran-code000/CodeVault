@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../C++"
+		},
+		{
+			"path": "../../../../matrix"
+		},
+		{
+			"path": "../../../../LeetCode"
+		},
+		{
+			"path": "../../../../luogu"
+		},
+		{
+			"path": "../../../../headerFile"
+		},
+		{
+			"path": "../../../../OI"
+		}
+	],
+	"settings": {
+		"qtConfigure.qtKitDir": "D:/Qt/6.5.1/mingw_64"
+	}
+}
