@@ -32,7 +32,8 @@ public:
         //构建 HuffmanTree
         while(minHeap.size() > 1){
             HuffmanNode* l = minHeap.top(); minHeap.pop();
-            HuffmanNode* r = minHeap.top(); minHeap.pop();
+            HuffmanNode* r = minHeap.top();
+            minHeap.pop();
             //创建新节点（freq = 左右节点之和）
             HuffmanNode* newnode = new HuffmanNode('\0', l->freq + r->freq);
             //连接节点！！！！！！
