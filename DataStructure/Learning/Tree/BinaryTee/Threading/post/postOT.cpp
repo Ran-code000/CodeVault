@@ -26,11 +26,11 @@ class ThreadedBinaryTree{
         return node;
     }
     Treenode* PreNode(Treenode* node){
-        if(node){
+        //if(node){
             if(node->lf == 1) return node->lc;
             else if(node->rc && node->rf == 0) return node->rc;
             else return node->lc;
-        }
+        //}
     }
     void PostOrderTraversal_Ordinary(Treenode* node){
         if(node){

@@ -61,8 +61,7 @@ private:
         return node;
     }
     Treenode* findMax(Treenode* node) const{
-        while(node && node->lc) node = node->lc;
-        return node;
+        while(node && node->rc) node = node->rc;
     }
     void clear(Treenode*& node){
         if(node == nullptr) return;

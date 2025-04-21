@@ -1,0 +1,30 @@
+{
+    "folders": [
+        {
+            "path": "Tree"
+        },
+        {
+            "path": "Sort"
+        },
+        {
+            "path": "Stack"
+        },
+        {
+            "path": "headerFile"
+        },
+        {
+            "path": "Graph"
+        },
+        {
+            "path": "Training"
+        },
+        {
+            "path": "../2025USAContest"
+        }
+    ],
+    "settings": {
+        "files.watcherExclude": {
+            "**/target": true
+        }
+    }
+}

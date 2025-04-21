@@ -1,0 +1,17 @@
+{
+    "editor.formatOnSave": true, // 每次保存时自动格式化文件
+    "files.autoSave": "onWindowChange", // 设置自动保存
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // 如果你使用 Prettier 格式化
+    "[cpp]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "ms-vscode.cpptools" // 针对 C++ 文件启用格式化
+    },
+    "[markdown]": {
+      "editor.formatOnSave": true // 针对 Markdown 文件启用格式化
+    },
+    "editor.tabSize": 2, // 设置 Tab 的大小为 2 空格
+    "editor.insertSpaces": true,
+    "C_Cpp.default.compilerPath": "D:\\mingw64\\bin\\g++.exe" // 使用空格代替 Tab（通常推荐这样做）
+  }
+
+  
